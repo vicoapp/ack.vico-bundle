@@ -457,7 +457,7 @@
 							<string key="NSFrame">{{119, 315}, {84, 18}}</string>
 							<reference key="NSSuperview" ref="337604377"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="158952386"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="282336917">
 								<int key="NSCellFlags">-2080244224</int>
@@ -504,34 +504,10 @@
 								<int key="NSPeriodicInterval">25</int>
 							</object>
 						</object>
-						<object class="NSButton" id="158952386">
-							<reference key="NSNextResponder" ref="337604377"/>
-							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{223, 315}, {89, 18}}</string>
-							<reference key="NSSuperview" ref="337604377"/>
-							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="455534922"/>
-							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="541083694">
-								<int key="NSCellFlags">67239424</int>
-								<int key="NSCellFlags2">131072</int>
-								<string key="NSContents">Invert match</string>
-								<reference key="NSSupport" ref="26"/>
-								<reference key="NSControlView" ref="158952386"/>
-								<int key="NSButtonFlags">1211912703</int>
-								<int key="NSButtonFlags2">2</int>
-								<reference key="NSNormalImage" ref="714779118"/>
-								<reference key="NSAlternateImage" ref="144852223"/>
-								<string key="NSAlternateContents"/>
-								<string key="NSKeyEquivalent"/>
-								<int key="NSPeriodicDelay">200</int>
-								<int key="NSPeriodicInterval">25</int>
-							</object>
-						</object>
 						<object class="NSButton" id="125321340">
 							<reference key="NSNextResponder" ref="337604377"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{223, 295}, {92, 18}}</string>
+							<string key="NSFrame">{{223, 315}, {92, 18}}</string>
 							<reference key="NSSuperview" ref="337604377"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="535698140"/>
@@ -555,7 +531,7 @@
 						<object class="NSButton" id="455534922">
 							<reference key="NSNextResponder" ref="337604377"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{334, 315}, {125, 18}}</string>
+							<string key="NSFrame">{{223, 295}, {125, 18}}</string>
 							<reference key="NSSuperview" ref="337604377"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="702632746"/>
@@ -644,7 +620,7 @@
 						<object class="NSButton" id="535698140">
 							<reference key="NSNextResponder" ref="337604377"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{334, 295}, {136, 18}}</string>
+							<string key="NSFrame">{{364, 295}, {136, 18}}</string>
 							<reference key="NSSuperview" ref="337604377"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="934995082"/>
@@ -723,7 +699,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="281921548"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{490, 282}</string>
 				<string key="NSMaxSize">{9.9999998e+12, 9.9999998e+12}</string>
 				<string key="NSFrameAutosaveName">AckResultsWindow</string>
@@ -890,14 +866,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">optInvertMatch</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="158952386"/>
-					</object>
-					<int key="connectionID">125</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">optLiteralMatch</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="125321340"/>
@@ -1057,13 +1025,12 @@
 							<reference ref="266004293"/>
 							<reference ref="402637435"/>
 							<reference ref="702632746"/>
-							<reference ref="158952386"/>
-							<reference ref="125321340"/>
-							<reference ref="455534922"/>
-							<reference ref="535698140"/>
 							<reference ref="934995082"/>
 							<reference ref="572749524"/>
 							<reference ref="1034398919"/>
+							<reference ref="125321340"/>
+							<reference ref="455534922"/>
+							<reference ref="535698140"/>
 						</object>
 						<reference key="parent" ref="841862279"/>
 					</object>
@@ -1169,20 +1136,6 @@
 						<int key="objectID">106</int>
 						<reference key="object" ref="348965680"/>
 						<reference key="parent" ref="702632746"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">107</int>
-						<reference key="object" ref="158952386"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="541083694"/>
-						</object>
-						<reference key="parent" ref="337604377"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">108</int>
-						<reference key="object" ref="541083694"/>
-						<reference key="parent" ref="158952386"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">111</int>
@@ -1377,9 +1330,6 @@
 					<string>105.IBAttributePlaceholdersKey</string>
 					<string>105.IBPluginDependency</string>
 					<string>106.IBPluginDependency</string>
-					<string>107.IBAttributePlaceholdersKey</string>
-					<string>107.IBPluginDependency</string>
-					<string>108.IBPluginDependency</string>
 					<string>111.IBAttributePlaceholdersKey</string>
 					<string>111.IBPluginDependency</string>
 					<string>112.IBPluginDependency</string>
@@ -1451,16 +1401,6 @@
 							<string key="name">ToolTip</string>
 							<reference key="object" ref="702632746"/>
 							<string key="toolTip">Ignores case distinctions in search pattern, only if pattern contains no upper case characters.</string>
-						</object>
-					</object>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<object class="NSMutableDictionary">
-						<string key="NS.key.0">ToolTip</string>
-						<object class="IBToolTipAttribute" key="NS.object.0">
-							<string key="name">ToolTip</string>
-							<reference key="object" ref="158952386"/>
-							<string key="toolTip">Selects non-matching lines.</string>
 						</object>
 					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1546,16 +1486,44 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
 					<string key="className">AckResultsController</string>
-					<string key="superclassName">NSViewController</string>
+					<string key="superclassName">NSWindowController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">gotoResult:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>filterResults:</string>
+							<string>gotoResult:</string>
+							<string>startStop:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">gotoResult:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">gotoResult:</string>
-							<string key="candidateClassName">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>filterResults:</string>
+							<string>gotoResult:</string>
+							<string>startStop:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">filterResults:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">gotoResult:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">startStop:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
@@ -1592,9 +1560,9 @@
 							<string>NSButton</string>
 							<string>NSTokenField</string>
 							<string>NSTextField</string>
-							<string>NSScanner</string>
+							<string>NSSpinner</string>
 							<string>NSButton</string>
-							<string>NSView</string>
+							<string>id</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -1669,7 +1637,7 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">spinner</string>
-								<string key="candidateClassName">NSScanner</string>
+								<string key="candidateClassName">NSSpinner</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">startStopButton</string>
@@ -1677,7 +1645,7 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">tableView</string>
-								<string key="candidateClassName">NSView</string>
+								<string key="candidateClassName">id</string>
 							</object>
 						</object>
 					</object>

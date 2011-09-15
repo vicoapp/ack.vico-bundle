@@ -49,7 +49,7 @@
     (ivar (id) tableView (id) arrayController (id) task (id) stream (id) baseURL (id) matchedFiles
           (id) initialPattern (id) spinner (id) startStopButton (id) searchPattern (id) searchOptions
           (BOOL) closeOnFinish (id) folderLabel (id) infoLabel (id) filterField
-          (id) optIgnoreCase (id) optSmartCase (id) optInvertMatch (id) optLiteralMatch
+          (id) optIgnoreCase (id) optSmartCase (id) optLiteralMatch
           (id) optWholeWords (id) optFollowSymlinks (id) markStack)
 
     (+ (id)ackInURL:(id)aURL forPattern:(id)pattern is
@@ -176,7 +176,6 @@
         (set arguments (NSMutableArray arrayWithObject:"--flush"))
         (if (@optSmartCase state) (arguments addObject:"--smart-case")
             (else (if (@optIgnoreCase state) (arguments addObject:"--ignore-case"))))
-        (if (@optInvertMatch state) (arguments addObject:"--invert-match"))
         (if (@optWholeWords state) (arguments addObject:"--word-regexp"))
         (if (@optLiteralMatch state) (arguments addObject:"--literal"))
         (if (@optFollowSymlinks state) (arguments addObject:"--follow"))
