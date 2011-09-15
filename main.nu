@@ -114,6 +114,7 @@
     (- (void)parse:(id)data is
         ; (NSLog "got #{(data length)} bytes of data from ack")
         (set string ((NSString alloc) initWithData:data encoding:NSUTF8StringEncoding))
+        (set markArray (NSMutableArray array))
         ((string lines) each:(do (line)
             (set match (/^(.{1,256}):(\d+):(.+)$/ findInString:line))
             (if (eq (match count) 4)
@@ -121,9 +122,10 @@
                 (@matchedFiles addObject:url)
                 (set line ((match groupAtIndex:2) integerValue))
                 (set mark (ViMark markWithURL:url name:nil title:(match groupAtIndex:3) line:line column:0))
-                ((@markStack list) addMark:mark)
+                (markArray addObject:mark)
                 ;(NSLog "got mark #{(mark description)}")
                 )))
+        ((@markStack list) addMarksFromArray:markArray)
         (self updateInfoLabel))
 
     (- (void)updateInfoLabel is
