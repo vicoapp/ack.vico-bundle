@@ -221,8 +221,8 @@
         (set mark (((mark-manager stackWithName:"Ack Results") list) markAtIndex:((cmd arg) intValue)))
         (else (set mark (((mark-manager stackWithName:"Ack Results") list) current))))
     (if mark
-        ((current-window) gotoMark:mark
-        (else (cmd message:"No results"))))))
+        ((current-window) gotoMark:mark)
+        (else (cmd message:"No results")))))
 
 ((ExMap defaultMap) define:'("anext" "an") syntax:"" as:(do (cmd)
     (if (set mark (((mark-manager stackWithName:"Ack Results") list) next))
