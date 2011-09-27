@@ -15,9 +15,11 @@
 ; Create a key map for the results table
 (set ackmap (ViMap mapWithName:"ackMap"))
 (ackmap include:(ViMap mapWithName:"tableNavigationMap"))
-(ackmap setKey:"<cr>" toAction:"gotoResult:")
+(ackmap setKey:"<cr>" toAction:"defaultOpen:")
 (ackmap setKey:"s" toAction:"splitOpen:")
 (ackmap setKey:"v" toAction:"vsplitOpen:")
+(ackmap setKey:"t" toAction:"tabOpen:")
+(ackmap setKey:"o" toAction:"switchOpen:")
 (ackmap setKey:"<tab>" toAction:"focusNextKeyView:")
 (ackmap setKey:"<shift-tab>" toAction:"focusNextKeyView:")
 (ackmap setKey:"<shift-ctrl-y>" toAction:"focusNextKeyView:")
@@ -28,7 +30,7 @@
     (ivar (id) keyManager)
 
     (- (void)awakeFromNib is
-        (set @keyManager ((ViKeyManager alloc) initWithTarget:self defaultMap:ackmap)))
+        (set @keyManager (ViKeyManager keyManagerWithTarget:self defaultMap:ackmap)))
 
     ; Pass key events to the key manager
     (- (void)keyDown:(id)event is (@keyManager keyDown:event))
@@ -38,8 +40,7 @@
             (else NO)))
 
     (- (id)keyManager:(id)keyManager evaluateCommand:(id)command is
-        (if (set target (self targetForSelector:(command action)))
-            (target performSelector:(command action) withObject:command)))
+        (self performCommand:command))
 
     (- (BOOL)focusNextKeyView:(id)command is ((self window) selectNextKeyView:self))
     (- (BOOL)focusDocument:(id)command is ((current-window) showWindow:nil)) )
@@ -90,7 +91,7 @@
         ; ((tc dataCell) setTextColor:((ViThemeStore defaultTheme) foregroundColor))
           ((tc dataCell) setFont:(ViThemeStore font)) ))
         (@tableView setDelegate:self)
-        (@tableView setDoubleAction:"gotoResult:")
+        (@tableView setDoubleAction:"defaultOpen:")
         ; FIXME: should remember the settings in NSUserDefaults
         (@optIgnoreCase setState:((user-defaults) boolForKey:"ignorecase"))
         (@optSmartCase setState:((user-defaults) boolForKey:"smartcase"))
@@ -118,7 +119,7 @@
         ((string lines) each:(do (line)
             (set match (/^(.{1,256}):(\d+):(.+)$/ findInString:line))
             (if (eq (match count) 4)
-                (set url (@baseURL URLByAppendingPathComponent:(match groupAtIndex:1)))
+                (set url (@baseURL URLWithRelativeString:(match groupAtIndex:1)))
                 (@matchedFiles addObject:url)
                 (set line ((match groupAtIndex:2) integerValue))
                 (set mark (ViMark markWithURL:url name:nil title:(match groupAtIndex:3) line:line column:0))
@@ -198,19 +199,16 @@
 
     (- (BOOL)filter:(id)command is ((self window) makeFirstResponder:@filterField))
 
-    (- (void)gotoResultAndSplitVertically:(BOOL)vertical is
+    (- (void)openInPosition:(int)position is
         (if (set mark ((@arrayController selectedObjects) lastObject))
-            (set view ((current-window) splitVertically:vertical andOpen:(mark url)))
-            ((view innerView) gotoLine:(mark line) column:(mark column))
+            ((current-window) gotoMark:mark positioned:position)
             ((current-window) showWindow:nil)))
 
-    (- (void)splitOpen:(id)sender is (self gotoResultAndSplitVertically:NO))
-    (- (void)vsplitOpen:(id)sender is (self gotoResultAndSplitVertically:YES))
-
-    (- (void)gotoResult:(id)sender is
-        (if (set mark ((@arrayController selectedObjects) lastObject))
-            ((current-window) gotoMark:mark)
-            ((current-window) showWindow:nil)))
+    (- (void)splitOpen:(id)sender is (self openInPosition:ViViewPositionSplitAbove))
+    (- (void)vsplitOpen:(id)sender is (self openInPosition:ViViewPositionSplitLeft))
+    (- (void)tabOpen:(id)sender is (self openInPosition:ViViewPositionTab))
+    (- (void)switchOpen:(id)sender is (self openInPosition:ViViewPositionReplace))
+    (- (void)defaultOpen:(id)sender is (self openInPosition:ViViewPositionDefault))
 )
 
 ((ExMap defaultMap) define:"ack" syntax:"e" as:(do (cmd)
