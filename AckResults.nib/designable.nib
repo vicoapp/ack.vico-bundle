@@ -457,7 +457,7 @@
 							<string key="NSFrame">{{119, 315}, {84, 18}}</string>
 							<reference key="NSSuperview" ref="337604377"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
+							<reference key="NSNextKeyView" ref="125321340"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="282336917">
 								<int key="NSCellFlags">-2080244224</int>
@@ -486,7 +486,7 @@
 							<string key="NSFrame">{{119, 295}, {80, 18}}</string>
 							<reference key="NSSuperview" ref="337604377"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="125321340"/>
+							<reference key="NSNextKeyView" ref="455534922"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="348965680">
 								<int key="NSCellFlags">-2080244224</int>
@@ -510,7 +510,7 @@
 							<string key="NSFrame">{{223, 315}, {92, 18}}</string>
 							<reference key="NSSuperview" ref="337604377"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="535698140"/>
+							<reference key="NSNextKeyView" ref="702632746"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="1023016223">
 								<int key="NSCellFlags">67239424</int>
@@ -534,7 +534,7 @@
 							<string key="NSFrame">{{223, 295}, {125, 18}}</string>
 							<reference key="NSSuperview" ref="337604377"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="702632746"/>
+							<reference key="NSNextKeyView" ref="535698140"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="959136103">
 								<int key="NSCellFlags">67239424</int>
@@ -723,26 +723,6 @@
 						<reference key="destination" ref="329442156"/>
 					</object>
 					<int key="connectionID">19</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: arrangedObjects.lineNumber</string>
-						<reference key="source" ref="331209247"/>
-						<reference key="destination" ref="329442156"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="331209247"/>
-							<reference key="NSDestination" ref="329442156"/>
-							<string key="NSLabel">value: arrangedObjects.lineNumber</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">arrangedObjects.lineNumber</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSConditionallySetsEditable</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">70</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -967,6 +947,26 @@
 						</object>
 					</object>
 					<int key="connectionID">195</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: arrangedObjects.line</string>
+						<reference key="source" ref="331209247"/>
+						<reference key="destination" ref="329442156"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="331209247"/>
+							<reference key="NSDestination" ref="329442156"/>
+							<string key="NSLabel">value: arrangedObjects.line</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">arrangedObjects.line</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSConditionallySetsEditable</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">205</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1479,7 +1479,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">204</int>
+			<int key="maxID">205</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1536,7 +1536,6 @@
 							<string>infoLabel</string>
 							<string>optFollowSymlinks</string>
 							<string>optIgnoreCase</string>
-							<string>optInvertMatch</string>
 							<string>optLiteralMatch</string>
 							<string>optSmartCase</string>
 							<string>optWholeWords</string>
@@ -1552,7 +1551,6 @@
 							<string>NSSearchField</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
-							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
@@ -1575,7 +1573,6 @@
 							<string>infoLabel</string>
 							<string>optFollowSymlinks</string>
 							<string>optIgnoreCase</string>
-							<string>optInvertMatch</string>
 							<string>optLiteralMatch</string>
 							<string>optSmartCase</string>
 							<string>optWholeWords</string>
@@ -1609,10 +1606,6 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">optIgnoreCase</string>
-								<string key="candidateClassName">NSButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">optInvertMatch</string>
 								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
