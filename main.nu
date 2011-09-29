@@ -1,6 +1,6 @@
 ; Copyright (c) 2011 Martin Hedenfalk <martin@vicoapp.com>
 ;
-; Permission to use, copy, modify, and distribute this software for any
+; Permission to use, copy, modify, and/or distribute this software for any
 ; purpose with or without fee is hereby granted, provided that the above
 ; copyright notice and this permission notice appear in all copies.
 ;
@@ -21,8 +21,6 @@
 (ackmap setKey:"t" toAction:"tabOpen:")
 (ackmap setKey:"o" toAction:"switchOpen:")
 (ackmap setKey:"<tab>" toAction:"focusNextKeyView:")
-(ackmap setKey:"<shift-tab>" toAction:"focusNextKeyView:")
-(ackmap setKey:"<shift-ctrl-y>" toAction:"focusNextKeyView:")
 (ackmap setKey:"<esc>" toAction:"cancelSearch:")
 (ackmap setKey:"/" toAction:"filter:")
 
@@ -49,7 +47,7 @@
             (else ((NSColor colorWithDeviceRed:(/ 0xCF 0xFF) green:(/ 0xD2 0xFF) blue:(/ 0xD9 0xFF) alpha:1) set)))
         ((NSBezierPath bezierPathWithRect:rect) fill))
 
-    ; make swiping change the active result list
+    ; swiping changes the active result list
     (- (void)swipeWithEvent:(id)event is
 	((@keyManager parser) reset)
 	(if (gt (event deltaX) 0)
@@ -101,18 +99,8 @@
         (@arrayController bind:"selectionIndexes" toObject:@markStack withKeyPath:"list.selectionIndexes" options:nil)
         (@markStack addObserver:self forKeyPath:"list" options:0 context:nil)
         (self updateLists)
-        ; Set colors to match the current theme.
-        ; (@tableView setBackgroundColor:((ViThemeStore defaultTheme) backgroundColor))
-        ; (@searchPattern setBackgroundColor:((ViThemeStore defaultTheme) backgroundColor))
-        ; (@searchPattern setTextColor:((ViThemeStore defaultTheme) foregroundColor))
-        ; (@searchPattern setFont:(ViThemeStore font))
-        ;(@searchPattern setFont:(NSFont userFixedPitchFontOfSize:12))
-        ; ((@tableView tableColumns) each:(do (tc)
-        ; ((tc dataCell) setTextColor:((ViThemeStore defaultTheme) foregroundColor))
-          ; ((tc dataCell) setFont:(ViThemeStore font)) ))
         (((@searchPattern cell) cancelButtonCell) setTarget:self)
         (((@searchPattern cell) cancelButtonCell) setAction:"cancel:")
-
         (@tableView setDelegate:self)
         (@tableView setDoubleAction:"defaultOpen:")
 	(user-defaults registerDefaults:

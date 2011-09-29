@@ -7,11 +7,23 @@ Vico version 1.3 is required for this plugin to work.
 
 ## Key bindings
 
-In normal mode:
+### In normal mode:
+
 &#x21E7;&#x2318;F -- Bring up the ack window, same as `:ack`.
 
-In the file explorer:
+### In the file explorer:
+
 &#x21E7;&#x2318;F -- Bring up the ack window with the selected folder as base search folder.
+
+### In the result list:
+
+- `<cr>` -- go to the selected result
+- `o` -- go to the selected result in the current view
+- `s` -- go to the selected result in a split view
+- `v` -- go to the selected result in a vertical split view
+- `t` -- go to the selected result in a new tab
+- `<esc>` -- cancel a running search
+- `/` -- focus the filter field
 
 ## Ex commands
 
