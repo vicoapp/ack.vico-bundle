@@ -25,6 +25,9 @@ Vico version 1.3 is required for this plugin to work.
 - `<esc>` -- cancel a running search
 - `/` -- focus the filter field
 
+Additionally, most vi motion commands are available to navigate the result list.
+
+
 ## Ex commands
 
 - `:ack` -- Bring up the ack window.
@@ -45,7 +48,7 @@ under the terms of the Artistic License version 2.0.
 
 Copyright (c) 2011 Martin Hedenfalk <martin@vicoapp.com>
 
-Permission to use, copy, modify, and distribute this software for any
+Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
 copyright notice and this permission notice appear in all copies.
 
