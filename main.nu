@@ -121,7 +121,7 @@
     ; Assumes output is UTF-8 and that we read data chunks on newline boundaries.
     (- (void)parse:(id)data is
         ; (NSLog "got #{(data length)} bytes of data from ack")
-        (set string ((NSString alloc) initWithData:data encoding:NSUTF8StringEncoding))
+        (set string (((NSString alloc) initWithData:data encoding:NSUTF8StringEncoding) autorelease))
         (set markArray (NSMutableArray array))
         ((string lines) each:(do (line)
             (set match (/^(.{1,256}):(\d+):(\d+):\s*(.+)$/ findInString:line))
