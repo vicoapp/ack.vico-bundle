@@ -186,6 +186,8 @@
         (self updateInfoLabel)
         (@spinner startAnimation:nil)
         (@searchPattern setStringValue:pattern)
+        (set @closeOnFinish NO)
+        (if (@task isRunning) (self cancel:nil))
 
         (set @highlightRegexp (ViRegexp regexpWithString:
             (cond ((user-defaults boolForKey:"ackUseRegexp") pattern)
